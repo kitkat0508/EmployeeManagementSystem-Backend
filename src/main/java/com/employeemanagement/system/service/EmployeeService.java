@@ -45,4 +45,8 @@ public class EmployeeService {
 		return employeeRepository.save(employee);
 	}
 	
+	@Transactional
+	public Employee updateEmployee(Employee employee) {
+		return employeeRepository.save(employee);
+	}
 }

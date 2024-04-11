@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -86,5 +87,22 @@ public class EmployeeController {
 		
 		Employee newEmployee = employeeService.addEmployee(employee);
 		return newEmployee;
+	}
+	
+	
+	//localhost:5050/employee/
+	@PutMapping
+	public Employee updateEmployee(@RequestBody Employee employee) {
+//		if(employeeService.getEmployeeByEmail(employee.getEmail())!=null) {
+//			System.out.println("Email already exist");
+//			return null;
+//		}
+//		
+//		if(employeeService.getEmployeeByContactNumber(employee.getContactNumber())!=null) {
+//			System.out.println("Contact Number already exist");
+//			return null;
+//		}
+		Employee updatedEmployee = employeeService.updateEmployee(employee);
+		return updatedEmployee;
 	}
 }
